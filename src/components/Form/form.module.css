@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  width: 740px;
+  border-radius: 5px;
+  padding: 30px 20px;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.formInput {
+  width: 100%;
+  font-size: 18px;
+  color: rgb(38, 38, 38);
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-right: 10px;
+}
+
+.formBtn {
+  width: 80px;
+  font-size: 30px;
+  line-height: 1.2;
+  padding-bottom: 4px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 174, 255);
+  border-radius: 5px;
+}
