@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TodoList from "./TodoList";
 
 export default function Todo() {
   const [todo, setTodo] = useState("");
@@ -15,16 +16,16 @@ export default function Todo() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} id='formElem'>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
-          name='inputitem'
+          name='inputTodo'
         />
         <button type='submit'>+</button>
       </form>
-      <p>{String(todos)}</p>
+      <TodoList todos={todos} />
     </div>
   );
 }
