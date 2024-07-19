@@ -1,30 +1,13 @@
 import { useState } from "react";
 import TodoList from "./TodoList";
+import Form from "./Form/Form";
 
 export default function Todo() {
-  const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (todo !== "") {
-      setTodos([...todos, todo]);
-      setTodo("");
-    }
-  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
-          name='inputTodo'
-        />
-        <button type='submit'>+</button>
-      </form>
+      <Form todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} />
     </div>
   );
