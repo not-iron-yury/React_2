@@ -2,13 +2,13 @@ import { useState } from "react";
 import styles from "./form.module.css";
 
 export default function Form({ addTodo }) {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({ text: "", done: false });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (todo !== "") {
-      addTodo(todo);
-      setTodo("");
+    if (todo.text !== "") {
+      addTodo({ ...todo, id: Date.now() });
+      setTodo({ text: "" });
     }
   };
 
@@ -17,8 +17,8 @@ export default function Form({ addTodo }) {
       <input
         className={styles.formInput}
         type='text'
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
+        value={todo.text}
+        onChange={(e) => setTodo({ ...todo, text: e.target.value })}
         placeholder='Какие планы?'
       />
       <button className={styles.formBtn} type='submit'>

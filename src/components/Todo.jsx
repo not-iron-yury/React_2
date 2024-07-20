@@ -9,7 +9,7 @@ export default function Todo() {
     setTodos([...todos, todo]);
   };
   const removeTodo = (todo) => {
-    setTodos(todos.filter((t) => t !== todo));
+    setTodos(todos.filter((t) => t.id !== todo.id));
   };
 
   return (
