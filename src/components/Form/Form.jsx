@@ -22,7 +22,7 @@ export default function Form({ todos, setTodos }) {
         placeholder='Какие планы?'
       />
       <button className={styles.formBtn} type='submit'>
-        +
+        Add
       </button>
     </form>
   );
