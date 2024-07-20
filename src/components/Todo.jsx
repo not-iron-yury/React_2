@@ -6,13 +6,13 @@ export default function Todo() {
   const [todos, setTodos] = useState([]);
 
   const removeTodo = (todo) => {
-    setTodos(todos.filter((t) => t.id !== todo.id));
+    setTodos(todos.filter((t) => t !== todo));
   };
 
   return (
     <div className='todo'>
       <Form todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} removeTodo={removeTodo} />
     </div>
   );
 }
