@@ -1,13 +1,13 @@
 import { useState } from "react";
 import styles from "./form.module.css";
 
-export default function Form({ todos, setTodos }) {
+export default function Form({ addTodo }) {
   const [todo, setTodo] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todo !== "") {
-      setTodos([...todos, todo]);
+      addTodo(todo);
       setTodo("");
     }
   };

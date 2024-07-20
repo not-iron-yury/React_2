@@ -5,13 +5,16 @@ import Form from "./Form/Form";
 export default function Todo() {
   const [todos, setTodos] = useState([]);
 
+  const addTodo = (todo) => {
+    setTodos([...todos, todo]);
+  };
   const removeTodo = (todo) => {
     setTodos(todos.filter((t) => t !== todo));
   };
 
   return (
     <div className='todo'>
-      <Form todos={todos} setTodos={setTodos} />
+      <Form todos={todos} addTodo={addTodo} />
       <TodoList todos={todos} removeTodo={removeTodo} />
     </div>
   );
