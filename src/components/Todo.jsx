@@ -11,11 +11,16 @@ export default function Todo() {
   const removeTodo = (todo) => {
     setTodos(todos.filter((t) => t.id !== todo.id));
   };
+  const doneTodo = (todo) => {
+    setTodos(
+      todos.map((t) => (t.id === todo.id ? { ...t, done: !t.done } : t))
+    );
+  };
 
   return (
     <div className='todo'>
       <Form todos={todos} addTodo={addTodo} />
-      <TodoList todos={todos} removeTodo={removeTodo} />
+      <TodoList todos={todos} removeTodo={removeTodo} doneTodo={doneTodo} />
     </div>
   );
 }

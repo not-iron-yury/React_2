@@ -7,7 +7,7 @@ export default function Form({ addTodo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todo.text !== "") {
-      addTodo({ ...todo, id: Date.now() });
+      addTodo({ ...todo, done: false, id: Date.now() });
       setTodo({ text: "" });
     }
   };

@@ -10,9 +10,15 @@
 }
 
 .text {
+  font-size: 20px;
   max-width: 620px;
   padding: 11px 15px;
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 .deleteBtn {
